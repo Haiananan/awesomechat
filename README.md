@@ -28,7 +28,7 @@ pnpm install awesomechat
 ### Simple
 
 ```js
-import AwesomeChatBot from "Awesomechat";
+import AwesomeChatBot from "awesomechat";
 const key = "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"; // replace with your key
 const systemDescription = "You are a good robot";
 const chatBot = new AwesomeChatBot(key,systemDescription);
@@ -47,7 +47,7 @@ chatBot.chat({
 ### With Context
 
 ```js
-import AwesomeChatBot from "Awesomechat";
+import AwesomeChatBot from "awesomechat";
 const key = "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"; // replace with your key
 const systemDescription =
   "You're a robot with emotions, and you need to add an emoji to the front of each sentence to express your emotions";
@@ -82,7 +82,7 @@ chatBot.chat({
 ### Abort
 
 ```js
-import AwesomeChatBot from "Awesomechat";
+import AwesomeChatBot from "awesomechat";
 const key = "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"; // replace with your key
 const chatBot = new AwesomeChatBot(key);
 
