@@ -4,7 +4,7 @@ const systemDescription = "You are a good robot";
 const chatBot = new AwesomeChatBot(key,systemDescription);
 
 chatBot.chat({
-  chatContext: `翻译以下文档为英文：`,
+  chatContext: `翻译以下文档为英文：哈哈`,
   onReplying(word, reply, id) {
     console.log("onReplying", reply);
   },
