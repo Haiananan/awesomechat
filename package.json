@@ -1,6 +1,6 @@
 {
   "name": "awesomechat",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "An awesome Node.js chatbot that supports streaming and conversation interruption, built on ChatGPT and AwesomeChatAPI.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

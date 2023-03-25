@@ -22,7 +22,7 @@ class AwesomeChatBot {
         this.token = token;
         systemDescription && (this.systemDescription = systemDescription);
         this.API_URL = token.startsWith("ac-")
-            ? `http://api.awesomechat.cn/v1/chat/completions`
+            ? `https://api.awesomechat.cn/v1/chat/completions`
             : "https://api.openai.com/v1/chat/completions";
     }
     clear() {
