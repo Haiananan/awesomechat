@@ -75,7 +75,7 @@ export type ChatOptions = {
     /**
      * Function to be called when an error occurs. The error parameter is the error object.
      */
-    onError?: (error: Error) => void;
+    onError?: (error: any) => void;
     /**
      *This callback function is executed when the chat is cancelled.
      *
