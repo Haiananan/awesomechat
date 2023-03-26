@@ -1,10 +1,13 @@
 {
   "name": "awesomechat",
-  "version": "1.0.2",
+  "version": "1.1.2",
   "description": "An awesome Node.js chatbot that supports streaming and conversation interruption, built on ChatGPT and AwesomeChatAPI.",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
   "scripts": {
-    "build": "tsc --outDir dist/"
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "chatgpt",
@@ -16,7 +19,8 @@
   ],
   "files": [
     "README.en.md",
-    "README.zh.md"
+    "README.zh.md",
+    "./dist/*"
   ],
   "repository": {
     "type": "git",

@@ -1,19 +1,18 @@
 {
   "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
     "declaration": true,
-    "target": "es6",
-    "module": "commonjs",
-    "noImplicitAny": true,
-    "outDir": "dist",
-    "rootDir": ".",
-    "removeComments": false,
-    "typeRoots": [
-      "node_modules/@types"
-    ]
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node"
   },
+  "include": [
+    "index.ts"
+  ],
   "exclude": [
-    "dist",
     "node_modules",
-    "examples"
+    "dist"
   ]
 }
