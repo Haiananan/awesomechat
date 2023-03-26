@@ -1,20 +1,18 @@
 {
   "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
     "declaration": true,
-    "target": "ES6",
-    "module": "ES6",
-    "noImplicitAny": true,
-    "moduleResolution": "nodenext",
-    "allowSyntheticDefaultImports": true,
-    "outDir": "dist",
-    "allowJs": true,
-    "rootDir": ".",
-    "removeComments": false,
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node"
   },
   "include": [
-    "./index.ts"
+    "index.ts"
   ],
   "exclude": [
-    "/dist/**/*",
+    "node_modules",
+    "dist"
   ]
 }
