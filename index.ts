@@ -147,7 +147,7 @@ class AwesomeChatBot {
     systemDescription && (this.systemDescription = systemDescription);
 
     this.API_URL = token.startsWith("ac-")
-      ? `https://api.awesomechat.cn/v1/chat/completions`
+      ? `http://api.awesomechat.cn/v1/chat/completions`
       : "https://api.openai.com/v1/chat/completions";
   }
 

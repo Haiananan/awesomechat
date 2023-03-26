@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,9 +7,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-const axios_1 = require("axios");
-const gpt_3_encoder_1 = require("gpt-3-encoder");
+import axios from "axios";
+import { encode } from "gpt-3-encoder";
 class AwesomeChatBot {
     constructor(token, systemDescription) {
         this.chatUsage = {
@@ -37,8 +35,8 @@ class AwesomeChatBot {
         this.id = undefined;
     }
     calculateUsage(prompt, reply) {
-        const promptTokens = (0, gpt_3_encoder_1.encode)(prompt).length;
-        const completionTokens = (0, gpt_3_encoder_1.encode)(reply).length;
+        const promptTokens = encode(prompt).length;
+        const completionTokens = encode(reply).length;
         const usage = {
             totalTokens: promptTokens + completionTokens,
             promptTokens,
@@ -68,17 +66,17 @@ class AwesomeChatBot {
                         : chatContext),
                 ];
                 const tokensToSend = messages.reduce((acc, item) => {
-                    return acc + (0, gpt_3_encoder_1.encode)(item.content).length;
+                    return acc + encode(item.content).length;
                 }, 0);
                 const next = beforeReplyStart === null || beforeReplyStart === void 0 ? void 0 : beforeReplyStart(tokensToSend);
                 if (next === false)
                     return;
                 this.clear();
-                this.cancelTokenSource = axios_1.default.CancelToken.source();
+                this.cancelTokenSource = axios.CancelToken.source();
                 this.onCancel = onCancel;
                 const request = Object.assign({ model: "gpt-3.5-turbo", messages, stream: true }, chatConfig);
                 const promptString = messages.map((item) => item.content).join(" ");
-                const { data } = yield axios_1.default.post(this.API_URL, request, {
+                const { data } = yield axios.post(this.API_URL, request, {
                     headers: {
                         Authorization: `Bearer ${this.token}`,
                     },
@@ -125,4 +123,4 @@ class AwesomeChatBot {
         });
     }
 }
-exports.default = AwesomeChatBot;
+export default AwesomeChatBot;
